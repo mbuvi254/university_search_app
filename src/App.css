@@ -1,0 +1,197 @@
+/* -------------------- Global -------------------- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.appHeader {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+/* -------------------- Search Section -------------------- */
+section {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.searchInput {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 280px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  outline: none;
+  transition: width 0.3s ease;
+}
+
+.searchInput:focus {
+  width: 100%;
+}
+
+.searchBtn {
+  padding: 10px 18px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.searchBtn:disabled {
+  background: #98cafe;
+  cursor: not-allowed;
+}
+
+.uniCount {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 10px;
+  color: green;
+}
+
+/* -------------------- University Card -------------------- */
+.universityCard {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.cardContainer {
+  width: 85%;
+  max-width: 450px;
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: all 0.2s;
+}
+
+.cardContainer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.cardContainer h4 {
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.cardContainer p {
+  margin: 0.5rem 0;
+}
+
+.cardContainer a:hover {
+  text-decoration: underline;
+}
+
+.viewUniversityBtn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-bottom: 0.5rem;
+}
+
+.viewUniversityBtn:hover {
+  background: #1f70a8;
+}
+
+/* -------------------- Loader -------------------- */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* -------------------- Full-Screen Modal -------------------- */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75); /* semi-transparent background */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modalOverlay.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 0; /* full screen, so no rounded corners */
+  overflow: hidden;
+  box-shadow: none;
+}
+
+/* Close Button */
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 1000;
+  background: #ff4444;
+  border: none;
+  font-size: 24px;
+  color: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+/* Iframe takes entire modal */
+.modalIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+
+
+/* -------------------- Mobile Responsive -------------------- */
+@media (max-width: 600px) {
+  .searchInput {
+    width: 200px;
+  }
+
+  .cardContainer {
+    width: 92%;
+  }
+}
