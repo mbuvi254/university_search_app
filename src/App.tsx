@@ -87,26 +87,35 @@ function App() {
               }}>
                 View
               </button>
+              
             </div>
             </div>
           </div>
         ))}
    
-   <div className={`modalOverlay ${showModal ? "show" : ""}`}>
-  <div className="modalContent">
-    <button className="closeBtn" onClick={() =>{ 
+ <div className={`modalOverlay ${showModal ? "show" : ""}`}>
+<div className="modalContent">
+<button className="closeBtn" onClick={() =>{ 
       setShowModal(false);
       setIframeLoading(false);
-
     }}>×</button>
 
+    {iframeLoading && <div className="loader" style={{
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}></div>}
     <iframe
-      className="modalIframe"
-      src={selectedUrl}
-      title="University Website"
-    ></iframe>
-  </div>
+    className="modalIframe"
+    src={selectedUrl}
+    title="University Website"
+    onLoad={() => setIframeLoading(false)}
+    style={{ display: iframeLoading ? 'none' : 'block' }} 
+  ></iframe>
 </div>
+</div>
+
 
 
       
